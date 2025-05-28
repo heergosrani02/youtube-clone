@@ -1,0 +1,100 @@
+.content1{
+    display: flex;
+    justify-content: space-between;
+}
+
+.ytlogo img{
+    width: 27px;
+    position: relative;
+    top: 10px;
+    left: 65px;
+}
+
+.ytlogo span{
+    position: absolute;
+    top: 9px;
+    left: 95px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.ytlogo span sup{
+    color: #959595;
+    font-size: 10px;
+}
+
+.searchbar input{
+    width: 500px;
+    height: 17px;
+    padding: 10px;
+    position: relative;
+    top: 5px;
+    left: 100px;
+    border: 1px solid #383838;
+    background: #111;
+    border-radius: 20px;
+}
+
+.searchbar button:nth-child(2){
+    width: 60px;
+    font-size: 20px;
+    background: #383838;
+    border: none;
+    border-radius: 0px 19px 19px 0px;
+    color: #fff;
+    padding: 7px;
+    position: relative;
+    top: 9px;
+    left: 39px;
+}
+
+.searchbar button:nth-child(3){
+    width: 35px;
+    font-size: 20px;
+    background: #383838;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    padding: 6px;
+    position: relative;
+    top: 9px;
+    left: 50px;
+}
+
+.profile{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile button{
+    width: 85px;
+    background: #383838;
+    border: none;
+    font-weight: 600;
+    border-radius: 20px;
+    color: #fff;
+    padding: 7px;
+    position: relative;
+    top: 5px;
+    right: 20px;
+}
+
+.profile button span{
+    font-size: 12px;
+    position: relative;
+    top: -5px;
+}
+
+.bell{
+    position: relative;
+    top: 5px;
+    right: 6px;
+}
+
+.profile img{
+    width: 20%;
+    position: relative;
+    top: 5px;
+}
