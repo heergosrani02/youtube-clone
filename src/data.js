@@ -8,5 +8,124 @@ import { FaRegClock } from "react-icons/fa6";
 import { AiOutlineLike } from "react-icons/ai";
 
 export const menu = [
-    
-]
+  {
+    id: 1,
+    image: MdHome,
+    name: "Home",
+  },
+
+  {
+    id: 2,
+    image: SiYoutubeshorts,
+    name: "Shorts",
+  },
+
+  {
+    id: 3,
+    image: MdOutlineSubscriptions,
+    name: "Subscriptions",
+  },
+
+  {
+    id: 4,
+    image: LuHistory,
+    name: "History",
+  },
+
+  {
+    id: 5,
+    image: CgPlayList,
+    name: "Playlists",
+  },
+
+  {
+    id: 6,
+    image: CiYoutube,
+    name: "Your Videos",
+  },
+
+  {
+    id: 7,
+    image: GiGraduateCap,
+    name: "Courses",
+  },
+
+  {
+    id: 8,
+    image: FaRegClock,
+    name: "Watch Later",
+  },
+
+  {
+    id: 9,
+    image: AiOutlineLike,
+    name: "Liked Videos",
+  },
+];
+
+export const filter = [
+  {
+    id: 1,
+    name: "All",
+  },
+
+  {
+    id: 2,
+    name: "Music",
+  },
+
+  {
+    id: 3,
+    name: "React Routers",
+  },
+
+  {
+    id: 4,
+    name: "Gaming",
+  },
+
+  {
+    id: 5,
+    name: "Kapil Sharma",
+  },
+
+  {
+    id: 6,
+    name: "Website",
+  },
+
+  {
+    id: 7,
+    name: "Movie Musicals",
+  },
+
+  {
+    id: 8,
+    name: "Podcasts",
+  },
+
+  {
+    id: 9,
+    name: "Mixes",
+  },
+
+  {
+    id: 10,
+    name: "T-Series",
+  },
+
+  {
+    id: 11,
+    name: "Thrillers",
+  },
+
+  {
+    id: 12,
+    name: "Ai",
+  },
+
+  {
+    id: 13,
+    name: "Arijit Singh",
+  },
+];
