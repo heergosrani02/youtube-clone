@@ -96,7 +96,7 @@ export const filter = [
 
   {
     id: 7,
-    name: "Movie Musicals",
+    name: "Horror Movies",
   },
 
   {
@@ -106,26 +106,21 @@ export const filter = [
 
   {
     id: 9,
-    name: "Mixes",
-  },
-
-  {
-    id: 10,
     name: "T-Series",
   },
 
   {
-    id: 11,
+    id: 10,
     name: "Thrillers",
   },
 
   {
-    id: 12,
-    name: "Ai",
+    id: 11,
+    name: "Generative - Ai",
   },
 
   {
-    id: 13,
-    name: "Arijit Singh",
+    id: 12,
+    name: "Indian Pop Music",
   },
 ];

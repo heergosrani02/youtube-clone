@@ -1,10 +1,13 @@
 .header{
-    width: 100%;
+    width: 100vw;
+    height: 100px;
+    background: #000000 ;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     position: fixed;
     top: 0;
+    z-index: 0;
 }
 
 .ytlogo img{
@@ -81,7 +84,7 @@
     color: #fff;
     padding: 7px;
     position: relative;
-    top: 5px;
+    top: 1px;
     right: 20px;
 }
 
@@ -93,24 +96,29 @@
 
 .bell{
     position: relative;
-    top: 5px;
+    top: 3px;
     right: 6px;
 }
 
 .profile img{
     width: 20%;
     position: relative;
-    top: 5px;
+    top: 3px;
+}
+
+.sidebar{
+    position: fixed;
+    left: 0;
 }
 
 .menu{
-    position: absolute;
+    position: fixed;
     top: 15px;
     left: 20px;
+    z-index: 1;
 }
 
 .menuItems{
-    width: 16%;
     margin: 10px;
     border-bottom: 1px solid #383838;
     position: relative;
@@ -118,7 +126,6 @@
 }
 
 .menuItem{
-    width: 4%;
     margin: 0px 22px;
     border: none;
 }
@@ -167,13 +174,15 @@
 }
 
 .filter{
-    width: 79%;
+    width: 81%;
+    height: 30px;
     font-size: 13px;
     display: flex;
     justify-content: space-between;
     position: relative;
-    top: 20px;
-    left: 270px;
+    top: 1px;
+    left: 243px;
+    overflow-x: hidden;
 }
 
 .filter span{
@@ -185,4 +194,11 @@
 .filter span:hover{
     background: #ffffff4e;
     transition: 0.3s;
+}
+
+.left{
+    width: 85%;
+    position: relative;
+    top: 1px;
+    left: 130px;
 }

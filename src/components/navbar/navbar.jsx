@@ -2,7 +2,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { CiSearch, CiBellOn } from "react-icons/ci";
 import { IoMdMic, IoMdAdd, IoIosArrowForward } from "react-icons/io";
 
-import ytLogo from "../../../public/yt-logo.png";
+import ytLogo from "./../../assets/img/yt-logo.png";
 import person from "./../../assets/img/person.png";
 
 import navbarCss from "./navbar.module.css";
@@ -49,7 +49,7 @@ function Navbar(){
               <img src={person} alt="profileImg" />
             </div>
 
-            <div className={navbarCss.filter}>
+            <div className={`${navbarCss.filter} ${isOpen ? "" : navbarCss.left}`}>
                 {filter.map(({id, name}) => (
                     <span key={id}>{name}</span>
                 ))}
