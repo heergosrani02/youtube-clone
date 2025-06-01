@@ -124,3 +124,5 @@ export const filter = [
     name: "Indian Pop Music",
   },
 ];
+
+export const API_KEY = "AIzaSyACpsWP3k4zgH7StVkV6pPODtEP_KoRlNE";

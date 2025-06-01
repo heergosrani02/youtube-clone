@@ -10,7 +10,7 @@ import { filter, menu } from "./../../data.js";
 import { useState } from "react";
 
 function Navbar(){
-    const [isOpen, setIsOpen] = useState();
+    const [isOpen, setIsOpen] = useState(true);
     
     const handleClick = () => {
         setIsOpen(!isOpen);

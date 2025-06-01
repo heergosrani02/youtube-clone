@@ -1,9 +1,43 @@
 .container{
     width: 81%;
     height: 100vh;
-    background: #141414;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
     position: relative;
     top: 120px;
     left: 243px;
     z-index: -1;
+}
+
+.videos{
+    width: 30%;
+}
+
+
+.items {
+    width: 100%;
+}
+
+.items img{
+    width: 340px;
+    border-radius: 15px;
+}
+
+.items p:nth-child(2){
+    margin: 5px 0px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.items p:nth-child(3){
+    margin: 5px 0px;
+    font-size: 13px;
+    color: #aaa;
+}
+
+.items span{
+    margin: 5px 0px;
+    font-size: 13px;
+    color: #aaa;
 }
