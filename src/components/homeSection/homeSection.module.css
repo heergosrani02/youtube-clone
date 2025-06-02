@@ -1,9 +1,9 @@
 .container{
     width: 81%;
-    height: 100vh;
+    height: 20vh;
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 45px;
     position: relative;
     top: 120px;
     left: 243px;
@@ -20,7 +20,7 @@
 }
 
 .items img{
-    width: 340px;
+    width: 370px;
     border-radius: 15px;
 }
 

@@ -125,4 +125,4 @@ export const filter = [
   },
 ];
 
-export const API_KEY = "AIzaSyACpsWP3k4zgH7StVkV6pPODtEP_KoRlNE";
+export const API_KEY = 'AIzaSyACpsWP3k4zgH7StVkV6pPODtEP_KoRlNE';
