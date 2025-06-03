@@ -10,17 +10,12 @@ import { filter, menu } from "./../../data.js";
 import { useState } from "react";
 
 function Navbar(){
-    const [isOpen, setIsOpen] = useState(true);
-    
-    const handleClick = () => {
-        setIsOpen(!isOpen);
-    }
 
     return (
       <>
         <div className={navbarCss.container}>
           <span className={navbarCss.menu} style={{zIndex: 1}}>
-            <AiOutlineMenu size={18} onClick={handleClick} />
+            <AiOutlineMenu size={18}/>
           </span>
 
           <div className={navbarCss.header}>
@@ -49,25 +44,25 @@ function Navbar(){
               <img src={person} alt="profileImg" />
             </div>
 
-            <div className={`${navbarCss.filter} ${isOpen ? "" : navbarCss.left}`}>
+            <div className={navbarCss.filter}>
                 {filter.map(({id, name}) => (
                     <span key={id}>{name}</span>
                 ))}
             </div>
-          </div>
+          </div>  
         </div>
 
         <div className={navbarCss.sidebar}>
-          <div className={`${navbarCss.menuItems} ${!isOpen ? navbarCss.menuItem : ""}`}>
+          <div className={navbarCss.menuItems}>
             {menu.slice(0, 3).map(({ image: Icon, name, id }) => (
-              <div className={`${isOpen ? navbarCss.items : navbarCss.item}`} key={id}>
+              <div className={navbarCss.items} key={id}>
                 <Icon size={22} />
                 <span>{name}</span>
               </div>
             ))}
           </div>
 
-          <div className={`${navbarCss.menuItems} ${isOpen ? "" : navbarCss.hide}`}>
+          <div className={navbarCss.menuItems}>
             <span className={navbarCss.you}>
               You
               <IoIosArrowForward

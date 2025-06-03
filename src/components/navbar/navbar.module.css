@@ -107,8 +107,11 @@
 }
 
 .sidebar{
+    height: 100vh;
     position: fixed;
+    top: 90px;
     left: 0;
+    background-color: black;
 }
 
 .menu{
@@ -122,12 +125,7 @@
     margin: 10px;
     border-bottom: 1px solid #383838;
     position: relative;
-    top: 45px;
-}
-
-.menuItem{
-    margin: 0px 22px;
-    border: none;
+    bottom: 45px;
 }
 
 .items{
@@ -143,22 +141,7 @@
     left: 27px;
 }
 
-.item{
-    width: 40%;
-    padding: 15px 20px;
-    margin: 0px -24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.item span{
-    font-size: 8px;
-    margin-top: 5px;
-}
-
-.items:hover, .you:hover, .item:hover{
+.items:hover, .you:hover{
     background: #383838;
     border-radius: 10px;
 }
@@ -167,10 +150,6 @@
     width: 190px;
     display: inline-block;
     padding: 8px;
-}
-
-.hide{
-    display: none;
 }
 
 .filter{
@@ -194,11 +173,4 @@
 .filter span:hover{
     background: #ffffff4e;
     transition: 0.3s;
-}
-
-.left{
-    width: 85%;
-    position: relative;
-    top: 1px;
-    left: 130px;
 }
