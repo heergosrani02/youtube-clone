@@ -1,20 +1,8 @@
 import homeCss from "./homeSection.module.css";
 import { useEffect, useState } from "react";
-import { API_KEY } from "./../../data.js";
+import { API_KEY, value_converter } from "./../../data.js";
 import moment from "moment";
 import { Link } from "react-router";
-
-export const value_converter  = (value) => {
-  if(value>=1000000){
-    return Math.floor(value/1000000)+"M";
-  }
-  else if(value>=1000){
-    return Math.floor(value/1000)+"K";
-  }
-  else{
-    return value;
-  }
-}
 
 function HomeSection() {
   const [videos, setVideos] = useState([]);
