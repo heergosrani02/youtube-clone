@@ -1,0 +1,32 @@
+.container{
+    width: 340px;
+    position: absolute;
+    top: 95px;
+    right: 10px;
+    font-size: 12px;
+    z-index: -1;
+}
+
+.container span{
+    font-size: 11px;
+    color: #aaa;
+}
+
+.content{
+    width: 97%;
+    display: flex;
+    gap: 15px;
+}
+
+.content img{
+    width: 45%;
+    height: 90px;
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.title{
+    margin: 12px 0px 2px 0px;
+    text-overflow: ellipsis;
+}

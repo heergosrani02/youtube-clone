@@ -5,13 +5,13 @@ import { useParams } from "react-router";
 import { AiOutlineLike, AiOutlineDislike } from "react-icons/ai";
 import { PiShareFat, PiCurrencyDollarBold } from "react-icons/pi";
 import { HiDownload } from "react-icons/hi";
+import Recommended from "../recommendedPart/recommended.jsx";
 
 function VideoPage(){
-
-    const {videoId} = useParams();
+    const {videoId, categoryId} = useParams();
 
     const [videoData, setVideoData] = useState();
-    const [channelData, setChannelData] = useState(null);
+    //const [channelData, setChannelData] = useState(null);
 
     const videoDataUrl = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${API_KEY}`;
     //const channelDataUrl = `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${videoData.snippet.channelId}w&key=${API_KEY}`;
@@ -33,7 +33,7 @@ function VideoPage(){
     return(
         <>
             <div className={videoCss.container}>
-                <iframe width="850" height="450" src={`https://www.youtube.com/embed/${videoId}`} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                <iframe width="820" height="420" src={`https://www.youtube.com/embed/${videoId}?autoplay=1`} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                 <h3>{videoData?videoData.snippet.title: "Title Here"}</h3>
                 <div className={videoCss.channel}>
                     <div className={videoCss.channelDetail}>
@@ -42,19 +42,18 @@ function VideoPage(){
                             <p>1000 subscribers</p>
                         </div>
                         <div>
-                            <button className={videoCss.btn}>Join</button>
                             <button className={videoCss.btn}>Subscribe</button>
                         </div>
                     </div>
 
                     <div className={videoCss.channelStatistics}>
                         <div className={videoCss.button}>
-                            <button className={videoCss.btn}><AiOutlineLike size={18} style={{paddingRight:"5px"}}/>{value_converter(videoData?videoData.statistics.likeCount:"")}</button>
-                            <button className={videoCss.btn}><AiOutlineDislike size={18}/></button>
+                            <button className={videoCss.btn}><AiOutlineLike size={17} style={{paddingRight:"5px", position: "relative", top: "2px"}}/>{value_converter(videoData?videoData.statistics.likeCount:"")}</button>
+                            <button className={videoCss.btn}><AiOutlineDislike size={17} style={{position: "relative", top: "4px"}}/></button>
                         </div>
-                        <button className={videoCss.btn}><PiShareFat size={18}/> Share</button>
-                        <button className={videoCss.btn}><HiDownload size={18}/> Download</button>
-                        <button className={videoCss.btn}><PiCurrencyDollarBold size={18}/> Thanks</button>
+                        <button className={videoCss.btn}><PiShareFat size={17} style={{position: "relative", top: "4px"}}/> Share</button>
+                        <button className={videoCss.btn}><HiDownload size={17} style={{position: "relative", top: "4px"}}/> Download</button>
+                        <button className={videoCss.btn}><PiCurrencyDollarBold size={17} style={{position: "relative", top: "4px"}}/> Thanks</button>
                     </div>
                 </div>
 
@@ -69,6 +68,8 @@ function VideoPage(){
                     </div>
                 </div>
             </div>
+
+            <Recommended categoryId={categoryId}/>
         </>
     )
 };

@@ -16,7 +16,7 @@ h3{
 }
 
 .channel{
-    width: 830px;
+    width: 800px;
     height: 5%;
     display: flex;
     justify-content: space-between;
@@ -43,7 +43,7 @@ h3{
     margin: 10px 5px;
 }
 
-.channelDetail button:nth-child(2){
+.channelDetail button:nth-child(1){
     color: #383838;
     background: #fff;
 }
@@ -63,7 +63,7 @@ h3{
 }
 
 .btn{
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
     background: #383838;
     color: white;
@@ -71,6 +71,7 @@ h3{
     padding: 7px 15px 10px 15px;
     border-radius: 19px;
     cursor: pointer;
+
 }
 
 .btn:hover{
