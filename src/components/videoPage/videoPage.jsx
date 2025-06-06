@@ -13,12 +13,13 @@ function VideoPage(){
 
     const [videoData, setVideoData] = useState(null);
     const [channelData, setChannelData] = useState(null);
+    const [commentsData, setCommentData] = useState([]);
 
     const fetchData = async () => {
         const videoDataUrl = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${API_KEY}`;
         await fetch(videoDataUrl)
         .then((response) => response.json())
-        .then((data) => (console.log(data), setVideoData(data.items[0])))
+        .then((data) => setVideoData(data.items[0]))
         .catch((error) => console.log(error));
     }
     
@@ -27,17 +28,23 @@ function VideoPage(){
     }, [videoId])
 
 
-    const fetchChannelDetail = async () => {
+    const fetchVideoDetail = async () => {
         const channelDataUrl = `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${videoData?.snippet.channelId}&key=${API_KEY}`;
         await fetch(channelDataUrl)
         .then((response) => response.json())
-        .then((data) =>(console.log(data), setChannelData(data.items[0])))
+        .then((data) => setChannelData(data.items[0]))
         .catch((error) => console.log(error));
+
+        const commentsDataUrl = `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&videoId=${videoId}&key=${API_KEY}`;
+        await fetch(commentsDataUrl)
+        .then((response) => response.json())
+        .then((data) => setCommentData(data.items))
+        .catch((error) => console.log(error))
     }
 
     useEffect(() => {
-        fetchChannelDetail();
-    }, [videoData])
+        fetchVideoDetail();
+    }, [videoData, commentsData])
 
     return(
         <>
@@ -76,13 +83,20 @@ function VideoPage(){
 
                 <div className={videoCss.comments}>
                     <h4>{value_converter(videoData?videoData.statistics.commentCount:"")} Comments</h4>
-                    <div className={videoCss.comment}>
-                        <span>@abchello</span>
-                        <span>1 year ago</span>
-                        <p>you are amazing i remember when you used to make small projects videos now your making clones for big apps this 10x more amazing keep posting we want series for big apps like this long videos.</p>
-                        <span style={{marginRight: "5px", position: "relative", top: "4px"}}><AiOutlineLike size={20}/> 20 </span> <AiOutlineDislike size={20}/>
-                        <span style={{marginLeft: "40px", position: "relative", top: "4px"}}>Reply</span>
-                    </div>
+                    {commentsData.map((fetchComment, index) => {
+                        return (
+                            <div key={index} className={videoCss.comment}>
+                                <img src={fetchComment.snippet.topLevelComment.snippet.authorProfileImageUrl} alt="" />
+                                <div className={videoCss.data}>
+                                    <span>{fetchComment.snippet.topLevelComment.snippet.authorDisplayName}</span>
+                                    <span>{moment(fetchComment.snippet.topLevelComment.snippet.publishedAt).fromNow()}</span>
+                                    <p>{fetchComment.snippet.topLevelComment.snippet.textOriginal}</p>
+                                    <span style={{marginRight: "5px", position: "relative", top: "-2px"}}><AiOutlineLike size={20}/> {value_converter(fetchComment.snippet.topLevelComment.snippet.likeCount)} </span> <AiOutlineDislike size={20}/>
+                                    <span style={{marginLeft: "35px", position: "relative", top: "-5px"}}>Reply</span>
+                                </div>
+                            </div>
+                        )
+                    })}
                 </div>
             </div>
 

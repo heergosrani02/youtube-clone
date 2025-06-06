@@ -13,7 +13,7 @@ function HomeSection() {
       .then((response) => response.json())
       .then((data) => setVideos(data.items))
       .catch((error) => console.log(error));
-  }, []);
+  }, [videos]);
 
   return (
     <>
