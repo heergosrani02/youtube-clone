@@ -25,19 +25,19 @@
 }
 
 .items p:nth-child(2){
-    margin: 5px 0px;
+    margin: 5px 0px 0px 0px;
     font-size: 15px;
     font-weight: 500;
 }
 
 .items p:nth-child(3){
-    margin: 5px 0px;
+    margin: 0px;
     font-size: 13px;
     color: #aaa;
 }
 
 .items span{
-    margin: 5px 0px;
+    margin: 0px;
     font-size: 13px;
     color: #aaa;
 }

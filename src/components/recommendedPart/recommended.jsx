@@ -12,7 +12,7 @@ function Recommended({ categoryId }) {
   useEffect(() => {
     fetch(recommendDataUrl)
       .then((response) => response.json())
-      .then((data) => (console.log(data), setRecommendedData(data.items)))
+      .then((data) => setRecommendedData(data.items))
       .catch((error) => console.log(error));
   }, []);
 
@@ -22,17 +22,15 @@ function Recommended({ categoryId }) {
         {recommendedData.map((fetchData) => {
           return (
             <div key={fetchData.id}>
-            <Link to={`/video/${fetchData.snippet.categoryId}/${fetchData.id}`} style={{textDecoration: "none", color: "white"}}>
-              <div className={recommendedCss.content}>
+            <Link to={`/video/${fetchData.snippet.categoryId}/${fetchData.id}`} style={{textDecoration: "none", color: "white"}} className={recommendedCss.content}>
               <img src={fetchData.snippet.thumbnails.medium.url} alt="" />
               <div className={recommendedCss.item}>
                 <p className={recommendedCss.title}>
-                  {fetchData.snippet.title}
+                  {fetchData.snippet.title.slice(0, 52)} . . .
                 </p>
                 <span>{fetchData.snippet.channelTitle}</span> <br />
                 <span>{value_converter(fetchData.statistics.viewCount)} views &bull; </span>
                 <span>{moment(fetchData.snippet.publishedAt).fromNow()}</span>
-              </div>
               </div>
             </Link>
             </div>

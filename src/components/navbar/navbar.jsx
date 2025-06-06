@@ -8,6 +8,7 @@ import person from "./../../assets/img/person.png";
 import navbarCss from "./navbar.module.css";
 import { filter, menu } from "./../../data.js";
 import { useState } from "react";
+import { Link } from "react-router";
 
 function Navbar(){
 
@@ -19,12 +20,12 @@ function Navbar(){
           </span>
 
           <div className={navbarCss.header}>
-            <div className={navbarCss.ytlogo}>
+            <Link to="/" className={navbarCss.ytlogo} style={{textDecoration: "none", color: "white"}}>
               <img src={ytLogo} alt="YoutubeLogo" />
               <span>
                 YouTube <sup>IN</sup>
               </span>
-            </div>
+            </Link>
 
             <div className={navbarCss.searchbar}>
               <input type="text" placeholder="Search" />

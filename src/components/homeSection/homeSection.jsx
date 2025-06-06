@@ -11,7 +11,7 @@ function HomeSection() {
   useEffect(() => {
     fetch(videoUrl)
       .then((response) => response.json())
-      .then((data) => (console.log(data), setVideos(data.items)))
+      .then((data) => setVideos(data.items))
       .catch((error) => console.log(error));
   }, []);
 

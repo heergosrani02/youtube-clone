@@ -6,29 +6,38 @@ import { AiOutlineLike, AiOutlineDislike } from "react-icons/ai";
 import { PiShareFat, PiCurrencyDollarBold } from "react-icons/pi";
 import { HiDownload } from "react-icons/hi";
 import Recommended from "../recommendedPart/recommended.jsx";
+import moment from "moment";
 
 function VideoPage(){
     const {videoId, categoryId} = useParams();
 
-    const [videoData, setVideoData] = useState();
-    //const [channelData, setChannelData] = useState(null);
+    const [videoData, setVideoData] = useState(null);
+    const [channelData, setChannelData] = useState(null);
 
-    const videoDataUrl = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${API_KEY}`;
-    //const channelDataUrl = `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${videoData.snippet.channelId}w&key=${API_KEY}`;
+    const fetchData = async () => {
+        const videoDataUrl = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${API_KEY}`;
+        await fetch(videoDataUrl)
+        .then((response) => response.json())
+        .then((data) => (console.log(data), setVideoData(data.items[0])))
+        .catch((error) => console.log(error));
+    }
     
     useEffect(() => {
-        fetch(videoDataUrl)
-        .then((response) => response.json())
-        .then((data) => setVideoData(data.items[0]))
-        .catch((error) => console.log(error));
-    }, [])
+        fetchData();
+    }, [videoId])
 
-    // useEffect(() => {
-    //     fetch(channelDataUrl)
-    //     .then((response) => response.json())
-    //     .then((data) =>(console.log(data), setChannelData(data.items[0])))
-    //     .catch((error) => console.log(error));
-    // }, [])
+
+    const fetchChannelDetail = async () => {
+        const channelDataUrl = `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${videoData?.snippet.channelId}&key=${API_KEY}`;
+        await fetch(channelDataUrl)
+        .then((response) => response.json())
+        .then((data) =>(console.log(data), setChannelData(data.items[0])))
+        .catch((error) => console.log(error));
+    }
+
+    useEffect(() => {
+        fetchChannelDetail();
+    }, [videoData])
 
     return(
         <>
@@ -37,9 +46,10 @@ function VideoPage(){
                 <h3>{videoData?videoData.snippet.title: "Title Here"}</h3>
                 <div className={videoCss.channel}>
                     <div className={videoCss.channelDetail}>
+                        <img src={channelData?channelData.snippet.thumbnails.default.url:null} alt="" />
                         <div>
                             <p>{videoData?videoData.snippet.channelTitle:""}</p>
-                            <p>1000 subscribers</p>
+                            <p>{value_converter(channelData?channelData.statistics.subscriberCount:"1M")} subscribers</p>
                         </div>
                         <div>
                             <button className={videoCss.btn}>Subscribe</button>
@@ -55,16 +65,23 @@ function VideoPage(){
                         <button className={videoCss.btn}><HiDownload size={17} style={{position: "relative", top: "4px"}}/> Download</button>
                         <button className={videoCss.btn}><PiCurrencyDollarBold size={17} style={{position: "relative", top: "4px"}}/> Thanks</button>
                     </div>
+
+                </div>
+                
+                <div className={videoCss.description}>
+                    <span>{value_converter(videoData?videoData.statistics.viewCount:"")} views </span>
+                    <span>{moment(videoData?videoData.snippet.publishedAt:"").fromNow()} </span>
+                    <p>{channelData?channelData.snippet.description.slice(0, 255):""} . . .</p>
                 </div>
 
                 <div className={videoCss.comments}>
-                    <h4>316 Comments</h4>
+                    <h4>{value_converter(videoData?videoData.statistics.commentCount:"")} Comments</h4>
                     <div className={videoCss.comment}>
                         <span>@abchello</span>
-                        <span> 1 year ago</span>
+                        <span>1 year ago</span>
                         <p>you are amazing i remember when you used to make small projects videos now your making clones for big apps this 10x more amazing keep posting we want series for big apps like this long videos.</p>
-                        <span style={{marginRight: "5px"}}><AiOutlineLike size={20}/> 20 </span> <AiOutlineDislike size={20}/>
-                        <span style={{marginLeft: "40px"}}>Reply</span>
+                        <span style={{marginRight: "5px", position: "relative", top: "4px"}}><AiOutlineLike size={20}/> 20 </span> <AiOutlineDislike size={20}/>
+                        <span style={{marginLeft: "40px", position: "relative", top: "4px"}}>Reply</span>
                     </div>
                 </div>
             </div>
