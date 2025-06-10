@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import videoCss from "./VideoPage.module.css";
+import videoCss from "./videoPage.module.css";
 import { API_KEY, value_converter } from "../../data.js";
 import { useParams } from "react-router";
 import { AiOutlineLike, AiOutlineDislike } from "react-icons/ai";
