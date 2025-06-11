@@ -12,10 +12,16 @@ import { Link } from "react-router";
 
 function Navbar(){
 
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleClick = () => {
+      setIsOpen(!isOpen);
+    }
+
     return (
       <>
         <div className={navbarCss.container}>
-          <span className={navbarCss.menu} style={{zIndex: 1}}>
+          <span className={navbarCss.menu} style={{zIndex: 1}} onClick={handleClick}>
             <AiOutlineMenu size={18}/>
           </span>
 
@@ -45,7 +51,7 @@ function Navbar(){
               <img src={person} alt="profileImg" />
             </div>
 
-            <div className={navbarCss.filter}>
+            <div className={`${navbarCss.filter} ${!isOpen ? navbarCss.left : ''}`}>
                 {filter.map(({id, name}) => (
                     <span key={id}>{name}</span>
                 ))}
@@ -53,7 +59,7 @@ function Navbar(){
           </div>  
         </div>
 
-        <div className={navbarCss.sidebar}>
+        {isOpen && <div className={navbarCss.sidebar}>
           <div className={navbarCss.menuItems}>
             {menu.slice(0, 3).map(({ image: Icon, name, id }) => (
               <div className={navbarCss.items} key={id}>
@@ -79,7 +85,7 @@ function Navbar(){
               </div>
             ))}
           </div>
-        </div>
+        </div> }
       </>
     );
 };

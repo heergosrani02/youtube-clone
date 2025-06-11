@@ -123,9 +123,14 @@ export const filter = [
     id: 12,
     name: "Indian Pop Music",
   },
+
+  {
+    id: 13,
+    name: "Hip-Hop Dance",
+  },
 ];
 
-export const API_KEY = 'AIzaSyACpsWP3k4zgH7StVkV6pPODtEP_KoRlNE';
+export const API_KEY = 'AIzaSyD4dE3tGy-jM_6NUeTtdN1PXx2sPWvKs7o';
 
 export const value_converter  = (value) => {
   if(value>=1000000){

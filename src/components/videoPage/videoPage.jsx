@@ -49,7 +49,7 @@ function VideoPage(){
     return(
         <>
             <div className={videoCss.container}>
-                <iframe width="820" height="420" src={`https://www.youtube.com/embed/${videoId}?autoplay=1`} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                <iframe width="967" height="486" src={`https://www.youtube.com/embed/${videoId}?autoplay=1`} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                 <h3>{videoData?videoData.snippet.title: "Title Here"}</h3>
                 <div className={videoCss.channel}>
                     <div className={videoCss.channelDetail}>

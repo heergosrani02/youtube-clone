@@ -11,7 +11,7 @@ function HomeSection() {
   useEffect(() => {
     fetch(videoUrl)
       .then((response) => response.json())
-      .then((data) => setVideos(data.items))
+      .then((data) => (console.log(data), setVideos(data.items)))
       .catch((error) => console.log(error));
   }, [videos]);
 
@@ -30,12 +30,12 @@ function HomeSection() {
                   <p>{video.snippet.title}</p>
                   <span>{video.snippet.channelTitle}</span> <br />
                   <span>
-                    {value_converter(video.statistics.viewCount)} views &bull;{" "}
+                    {value_converter(video.statistics.viewCount)} views &bull;
                   </span>
                   <span>{moment(video.snippet.publishedAt).fromNow()}</span>
                 </div>
              </Link>
-              </div>
+            </div>
           );
         })}
       </div>

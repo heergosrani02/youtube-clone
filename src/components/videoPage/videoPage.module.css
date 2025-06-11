@@ -1,7 +1,7 @@
 .container{
     width: 100vh;
     position: relative;
-    left: 240px;
+    left: 40px;
     top: 110px;
     z-index: -1;
 }
@@ -16,7 +16,7 @@ h3{
 }
 
 .channel{
-    width: 800px;
+    width: 930px;
     height: 5%;
     display: flex;
     justify-content: space-between;
@@ -88,8 +88,8 @@ h3{
 }
 
 .description{
-    width: 790px;
-    padding: 10px;
+    width: 930px;
+    padding: 10px 15px;
     margin: 20px 0px;
     font-size: 13px;
     text-overflow: ellipsis;
@@ -110,6 +110,7 @@ h3{
 }
 
 .comment{
+    width: 930px;
     font-size: 12px;
     margin-bottom: 30px;
     display: flex;
