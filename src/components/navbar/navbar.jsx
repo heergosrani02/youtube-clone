@@ -13,6 +13,7 @@ import { Link } from "react-router";
 function Navbar(){
 
     const [isOpen, setIsOpen] = useState(false);
+    const size = window.innerWidth < 600;
 
     const handleClick = () => {
       setIsOpen(!isOpen);
@@ -45,7 +46,7 @@ function Navbar(){
 
             <div className={navbarCss.profile}>
               <button>
-                <IoMdAdd size={20} /> <span>Create</span>
+                <IoMdAdd size={size ? 13 : 20} /> <span>Create</span>
               </button>
               <CiBellOn size={25} className={navbarCss.bell} />
               <img src={person} alt="profileImg" />
@@ -53,7 +54,7 @@ function Navbar(){
 
             <div className={`${navbarCss.filter} ${!isOpen ? navbarCss.left : ''}`}>
                 {filter.map(({id, name}) => (
-                    <span key={id}>{name}</span>
+                    <div key={id}>{name}</div>
                 ))}
             </div>
           </div>  
