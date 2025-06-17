@@ -44,7 +44,7 @@ function VideoPage(){
 
     useEffect(() => {
         fetchVideoDetail();
-    }, [channelData, commentsData])
+    }, [videoData, channelData, commentsData]);
 
     return(
         <>
