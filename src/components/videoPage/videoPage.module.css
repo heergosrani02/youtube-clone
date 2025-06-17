@@ -1,4 +1,4 @@
-.container{
+.container {
     width: 100vh;
     position: relative;
     left: 40px;
@@ -6,16 +6,16 @@
     z-index: -1;
 }
 
-iframe{
+iframe {
     border-radius: 10px;
     border: none;
 }
 
-h3{
+h3 {
     margin: 5px 0px;
 }
 
-.channel{
+.channel {
     width: 930px;
     height: 5%;
     display: flex;
@@ -23,12 +23,12 @@ h3{
     align-items: center;
 }
 
-.channelDetail{
+.channelDetail {
     display: flex;
     gap: 20px;
 }
 
-.channelDetail img{
+.channelDetail img {
     width: 35px;
     height: 35px;
     border-radius: 50%;
@@ -36,41 +36,41 @@ h3{
     top: 8px;
 }
 
-.channelDetail p:nth-child(1){
+.channelDetail p:nth-child(1) {
     font-weight: 500;
     margin: 3px 0px;
 }
 
-.channelDetail p:nth-child(2){
+.channelDetail p:nth-child(2) {
     color: #aaa;
     font-size: 12px;
     margin: 0px;
 }
 
-.channelDetail button{
+.channelDetail button {
     margin: 10px 5px;
 }
 
-.channelDetail button:nth-child(1){
+.channelDetail button:nth-child(1) {
     color: #383838;
     background: #fff;
 }
 
-.channelStatistics{
+.channelStatistics {
     display: flex;
     gap: 7px;
 }
 
-.button .btn:nth-child(1){
+.button .btn:nth-child(1) {
     border-radius: 19px 0px 0px 19px;
     border-right: 1px solid #7a7a7a7d;
 }
 
-.button .btn:nth-child(2){
+.button .btn:nth-child(2) {
     border-radius: 0px 19px 19px 0px;
 }
 
-.btn{
+.btn {
     font-size: 12px;
     font-weight: 600;
     background: #383838;
@@ -82,12 +82,12 @@ h3{
 
 }
 
-.btn:hover{
+.btn:hover {
     background: #ffffff4e;
     transition: 0.2s;
 }
 
-.description{
+.description {
     width: 930px;
     padding: 10px 15px;
     margin: 20px 0px;
@@ -97,19 +97,19 @@ h3{
     border-radius: 7px;
 }
 
-.description span{
+.description span {
     font-size: 12px;
 }
 
-.description span:nth-child(3){
+.description span:nth-child(3) {
     color: #aaa;
 }
 
-.comments{
+.comments {
     margin: 10px 0px;
 }
 
-.comment{
+.comment {
     width: 930px;
     font-size: 12px;
     margin-bottom: 30px;
@@ -117,13 +117,72 @@ h3{
     gap: 15px;
 }
 
-.comment span:nth-child(2){
+.comment span:nth-child(2) {
     margin-left: 5px;
-    color:#aaa;
+    color: #aaa;
 }
 
-.comment img{
+.comment img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
+}
+
+@media screen and (min-width: 360px) and (max-width: 480px) {
+    .container {
+        width: 89vw;
+        position: relative;
+        left: 20px;
+        top: 60px;
+        z-index: -1;
+    }
+
+    iframe {
+        width: 330px;
+        height: 14rem;
+        border-radius: 10px;
+        border: none;
+    }
+
+    .channel {
+        width: 341px;
+        height: 5%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .channelDetail {
+        display: flex;
+        gap: 20px;
+    }
+
+    .channelDetail button {
+        margin: 10px 15px;
+    }
+
+    .channelStatistics {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+    }
+
+    .description {
+        width: 290px;
+    }
+
+    .comments h4{
+        padding: 10px 15px;
+        background-color: #383838;
+        border-radius: 5px;
+    }
+
+    .comment {
+        width: 325px;
+        font-size: 12px;
+        margin-bottom: 30px;
+        display: none;
+        gap: 15px;
+    }
 }

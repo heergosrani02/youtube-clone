@@ -183,6 +183,10 @@
 
 @media screen and (min-width: 360px) and (max-width: 480px) {
 
+    .header{
+        height: 49px;
+    }
+
     .searchbar input {
         display: none;
     }
@@ -209,14 +213,14 @@
     .profile img{
         width: 25%;
         position: relative;
-        top: -25px;
+        top: 2px;
     }
 
     .profile button {
         width: 70px;
         padding: 4px;
         position: relative;
-        top: -25px;
+        top: 2px;
         right: 10px;
     }
 

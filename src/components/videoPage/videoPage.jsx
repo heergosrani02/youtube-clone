@@ -70,13 +70,11 @@ function VideoPage(){
                         </div>
                         <button className={videoCss.btn}><PiShareFat size={17} style={{position: "relative", top: "4px"}}/> Share</button>
                         <button className={videoCss.btn}><HiDownload size={17} style={{position: "relative", top: "4px"}}/> Download</button>
-                        <button className={videoCss.btn}><PiCurrencyDollarBold size={17} style={{position: "relative", top: "4px"}}/> Thanks</button>
                     </div>
-
                 </div>
                 
                 <div className={videoCss.description}>
-                    <span>{value_converter(videoData?videoData.statistics.viewCount:"")} views </span>
+                    <span>{value_converter(videoData?videoData.statistics.viewCount:"")} views  &bull; </span>
                     <span>{moment(videoData?videoData.snippet.publishedAt:"").fromNow()} </span>
                     <p>{channelData?channelData.snippet.description.slice(0, 255):""} . . .</p>
                 </div>

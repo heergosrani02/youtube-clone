@@ -32,7 +32,7 @@ function HomeSection() {
                   <span>
                     {value_converter(video.statistics.viewCount)} views &bull;
                   </span>
-                  <span>{moment(video.snippet.publishedAt).fromNow()}</span>
+                  <span> {moment(video.snippet.publishedAt).fromNow()}</span>
                 </div>
              </Link>
             </div>
